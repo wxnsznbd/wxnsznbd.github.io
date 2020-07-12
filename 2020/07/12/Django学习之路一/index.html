@@ -16,7 +16,7 @@
 <meta property="og:description" content="Django">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-12T05:10:47.000Z">
-<meta property="article:modified_time" content="2020-07-12T12:50:30.068Z">
+<meta property="article:modified_time" content="2020-07-12T14:58:48.998Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
   
@@ -190,7 +190,7 @@
 <li><p>创建app目录</p>
 </li>
 </ul>
-<pre><code>prthon manage.py startapp app名称</code></pre><h3 id="文件对应的功能"><a href="#文件对应的功能" class="headerlink" title="文件对应的功能"></a>文件对应的功能</h3><ul>
+<pre><code>python manage.py startapp app名称</code></pre><h3 id="文件对应的功能"><a href="#文件对应的功能" class="headerlink" title="文件对应的功能"></a>文件对应的功能</h3><ul>
 <li>setting.py 配置文件<ul>
 <li>静态文件</li>
 </ul>
@@ -201,8 +201,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,&apos;static&apos;)]</code></pre><ul>
 <li>TEMPLATES </li>
 </ul>
 <pre><code>&apos;DIRS&apos;: [os.path.join(BASE_DIR, &apos;templates&apos;)]</code></pre><ul>
-<li><p>INSTALLED_APPS 注册app</p>
-</li>
+<li>INSTALLED_APPS 注册app</li>
+</ul>
+<pre><code># 直接写名称
+# &apos;app01&apos;,
+&apos;app01.apps.App01Config&apos;  # 推荐写法</code></pre><ul>
 <li><p>MIDDLEWARE 注释掉csrf的中间件,可以提交POST请求</p>
 </li>
 <li><p>urls.py 路径与函数的对应关系</p>

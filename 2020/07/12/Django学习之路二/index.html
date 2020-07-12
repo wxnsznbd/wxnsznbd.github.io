@@ -16,7 +16,7 @@
 <meta property="og:description" content="ORM 对象关系映射 通过操作类,对象的方式去操作数据库">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-12T09:40:10.000Z">
-<meta property="article:modified_time" content="2020-07-12T12:48:38.976Z">
+<meta property="article:modified_time" content="2020-07-12T13:33:36.163Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
   
@@ -196,7 +196,12 @@ python manage.py migrate # 数据库迁移,将变更记录同步到数据库中<
 <li>获取数据库的数据</li>
 </ul>
 <pre><code>ret = models.User.objects.get(username=&quot;小猪佩奇&quot;,password=&quot;555&quot;) # 获取一条数据,获取不到或者多条报错
-ret = models.User.objects.filter(username=&quot;小猪佩奇&quot;,password=&quot;555&quot;) # 获取满足条件的数据,获取不到返回空列表</code></pre>
+ret = models.User.objects.filter(username=&quot;小猪佩奇&quot;,password=&quot;555&quot;) # 获取满足条件的数据,获取不到返回空列表
+ret = models.User.objects.all()  # QuerySe 对象列表
+print(ret)
+for i in ret:
+    print(i.username)
+    print(i.password)</code></pre>
       
 
       
@@ -267,6 +272,15 @@ ret = models.User.objects.filter(username=&quot;小猪佩奇&quot;,password=&quo
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Django学习之路三
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
