@@ -16,7 +16,7 @@
 <meta property="og:description" content="setting">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-21T11:14:46.000Z">
-<meta property="article:modified_time" content="2020-04-21T11:16:24.225Z">
+<meta property="article:modified_time" content="2020-04-23T07:54:20.382Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
   
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://q8918bki0.bkt.clouddn.com/head.jpg" class="js-avatar">
+			<img src="https://r1.ykimg.com/051600005E93D9FA4265930C61F88E23" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">王潇</a></h1>
@@ -101,7 +101,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://q8918bki0.bkt.clouddn.com/head.jpg" class="js-avatar">
+				<img src="https://r1.ykimg.com/051600005E93D9FA4265930C61F88E23" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">王潇</h1>
@@ -166,7 +166,58 @@
       
         <h2 id="setting"><a href="#setting" class="headerlink" title="setting"></a>setting</h2><a id="more"></a>
 
-<h3 id="scrapy的setting内容"><a href="#scrapy的setting内容" class="headerlink" title="scrapy的setting内容"></a>scrapy的setting内容</h3><p>1. </p>
+<h3 id="scrapy的setting内容"><a href="#scrapy的setting内容" class="headerlink" title="scrapy的setting内容"></a>scrapy的setting内容</h3><ol>
+<li>增加并发。<ul>
+<li>CONCURRENT_REQUESTS 默认16,看网络设置</li>
+</ul>
+</li>
+<li>降低log级别<ul>
+<li>LOG_LEVEL = ‘INFO’</li>
+<li>1.DEBUG - 调试信息</li>
+<li>2.INFO - 一般信息</li>
+<li>3.WARNING - 警告信息</li>
+<li>4.ERROR - 一般错误</li>
+<li>5.CRITICAL - 严重错误</li>
+</ul>
+</li>
+<li>保存日志文件 <ul>
+<li>LOG_FILE = ‘log.txt’</li>
+</ul>
+</li>
+<li>设置延迟下载<ul>
+<li>DOWMLOAD_DELY=3</li>
+</ul>
+</li>
+<li>不按照robots.txt<ul>
+<li>ROBOTSTXT_OBEY = False</li>
+</ul>
+</li>
+<li>配置请求头<ul>
+<li>只需要在settings中取消相应的设置即可 DEFAULT_REQUEST_HEADERS</li>
+</ul>
+</li>
+<li>禁止重试<ul>
+<li>RETRY_ENABLED = False</li>
+</ul>
+</li>
+<li>禁止重定向<ul>
+<li>REDIRECT_ENABLED = False</li>
+</ul>
+</li>
+<li>自动限速(AutoThrottle)<ul>
+<li>#默认False;为True表示启用AUTOTHROTTLE扩展</li>
+<li>AUTOTHROTTLE_ENABLED = True</li>
+<li>#默认3秒;初始下载延迟时间</li>
+<li>AUTOTHROTTLE_START_DELAY = 1</li>
+<li>#默认60秒；在高延迟情况下最大的下载延迟</li>
+<li>AUTOTHROTTLE_MAX_DELAY = 3</li>
+</ul>
+</li>
+<li>减少下载超时<ul>
+<li>DOWNLOAD_TIMEOUT = 15</li>
+</ul>
+</li>
+</ol>
 
       
 
@@ -249,8 +300,8 @@
     </a>
   
   
-    <a href="/2020/04/06/%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD%E7%94%A8%E7%9A%84pip-%E5%92%8Cconda-%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">常用命令</div>
+    <a href="/2020/04/07/pixiv%E7%9A%84%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pixiv的数据接口</div>
       <i class="icon-circle-right"></i>
     </a>
   

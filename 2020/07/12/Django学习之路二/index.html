@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Django学习之路一 | wxnsznbd</title>
+  <title>Django学习之路二 | wxnsznbd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Django">
+  <meta name="description" content="ORM 对象关系映射 通过操作类,对象的方式去操作数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django学习之路一">
-<meta property="og:url" content="http://yoursite.com/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/index.html">
+<meta property="og:title" content="Django学习之路二">
+<meta property="og:url" content="http://yoursite.com/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%BA%8C/index.html">
 <meta property="og:site_name" content="wxnsznbd">
-<meta property="og:description" content="Django">
+<meta property="og:description" content="ORM 对象关系映射 通过操作类,对象的方式去操作数据库">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-12T05:10:47.000Z">
-<meta property="article:modified_time" content="2020-07-12T12:50:30.068Z">
+<meta property="article:published_time" content="2020-07-12T09:40:10.000Z">
+<meta property="article:modified_time" content="2020-07-12T12:48:38.976Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
   
@@ -144,90 +144,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Django学习之路一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Django学习之路二" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Django学习之路一
+      Django学习之路二
     </h1>
   
 
         
-        <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" class="archive-article-date">
-  	<time datetime="2020-07-12T05:10:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
+        <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%BA%8C/" class="archive-article-date">
+  	<time datetime="2020-07-12T09:40:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><a id="more"></a>
+        <h5 id="ORM-对象关系映射-通过操作类-对象的方式去操作数据库"><a href="#ORM-对象关系映射-通过操作类-对象的方式去操作数据库" class="headerlink" title="ORM 对象关系映射 通过操作类,对象的方式去操作数据库"></a>ORM 对象关系映射 通过操作类,对象的方式去操作数据库</h5><a id="more"></a>
 
 <ul>
-<li><p>一安装</p>
-<ul>
-<li>pip install Django==版本号 (我用的2.2.14)</li>
-<li><a href="https://www.djangoproject.com/download/" target="_blank" rel="noopener">Django文档</a></li>
+<li>from表单的属性 actioyinshen指定提交的地址,(不写默认当前的地址),method请求方式</li>
 </ul>
-</li>
-<li><p>创建Django项目</p>
-<ul>
-<li>命令行 Django-admin startproject 项目名</li>
-<li>pycharm 创建 </li>
+<h4 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h4><ul>
+<li>对应关系</li>
+<li>类&gt;&gt;&gt;&gt;&gt;&gt;表</li>
+<li>对象&gt;&gt;&gt;&gt;&gt;数据行(记录)</li>
+<li>属性&gt;&gt;&gt;&gt;&gt;字段</li>
 </ul>
-</li>
-<li><p>启动项目</p>
-<ul>
-<li>命令行 python mange.py runserver </li>
-<li>绑定端口 python mange.py runserver 80</li>
-<li>绑定ip python mange.py runserver 0.0.0.0:80</li>
-<li>pycharm运行</li>
+<h5 id="使用ORM"><a href="#使用ORM" class="headerlink" title="使用ORM"></a>使用ORM</h5><ul>
+<li>settings中配置数据库的连接</li>
 </ul>
-</li>
-<li><p>创建app目录</p>
-</li>
+<pre><code>DATABASES = {
+    &apos;default&apos;: {
+    &apos;ENGINE&apos;: &apos;django.db.backends.sqlite3&apos;,
+    &apos;NAME&apos;: os.path.join(BASE_DIR, &apos;db.sqlite3&apos;),
+    }
+}</code></pre><ul>
+<li>models.py中写类:</li>
 </ul>
-<pre><code>prthon manage.py startapp app名称</code></pre><h3 id="文件对应的功能"><a href="#文件对应的功能" class="headerlink" title="文件对应的功能"></a>文件对应的功能</h3><ul>
-<li>setting.py 配置文件<ul>
-<li>静态文件</li>
+<pre><code>class User(models.Model):
+    username = models.CharField(max_length=32) # varchar(32)
+    password = models.CharField(max_length=32) # varchar(32)</code></pre><ul>
+<li>执行数据库迁移的命令</li>
 </ul>
-</li>
+<pre><code>python manage.py makemigrations # 检测所有app下面的models.py文件有什么变化,将变更几录作成迁移文件
+python manage.py migrate # 数据库迁移,将变更记录同步到数据库中</code></pre><ul>
+<li>获取数据库的数据</li>
 </ul>
-<pre><code>STATIC_URL = &apos;/static/&apos;
-STATICFILES_DIRS = [os.path.join(BASE_DIR,&apos;static&apos;)]</code></pre><ul>
-<li>TEMPLATES </li>
-</ul>
-<pre><code>&apos;DIRS&apos;: [os.path.join(BASE_DIR, &apos;templates&apos;)]</code></pre><ul>
-<li><p>INSTALLED_APPS 注册app</p>
-</li>
-<li><p>MIDDLEWARE 注释掉csrf的中间件,可以提交POST请求</p>
-</li>
-<li><p>urls.py 路径与函数的对应关系</p>
-</li>
-</ul>
-<pre><code>urlpatterns = [
-    path(&apos;admin/&apos;, admin.site.urls),
-    path(&apos;login/&apos;, views.login),
-    path(&apos;index/&apos;, views.index),
-]</code></pre><ul>
-<li>views.py 写函数</li>
-</ul>
-<pre><code>from django.shortcuts import render,HttpResponse,redirect
-def login(request):
-    # 业务逻辑
-    # request.method # 请求方式GET POST
-    # request.POST # POST请求发送的数据
-    # request.GET # url上的查询参数
-    # 获取POST请求的数据
-    # user = request.POST.get(&apos;user&apos;)
-    # return HttpResponse(&quot;登录成功&quot;)
-    # 跳转到指定页面
-    # return redirect(&apos;http://www.baidu.com&apos;) 
-    # 重定向路径
-    return redirect(&apos;/index/&apos;)</code></pre>
+<pre><code>ret = models.User.objects.get(username=&quot;小猪佩奇&quot;,password=&quot;555&quot;) # 获取一条数据,获取不到或者多条报错
+ret = models.User.objects.filter(username=&quot;小猪佩奇&quot;,password=&quot;555&quot;) # 获取满足条件的数据,获取不到返回空列表</code></pre>
       
 
       
@@ -285,7 +254,7 @@ def login(request):
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%BA%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,18 +268,9 @@ def login(request):
   
 <nav id="article-nav">
   
-    <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%BA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Django学习之路二
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/21/python%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python数据库操作</div>
+    <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Django学习之路一</div>
       <i class="icon-circle-right"></i>
     </a>
   
