@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>python数据库操作 | wxnsznbd</title>
+  <title>Django学习之路一 | wxnsznbd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python链接数据库">
+  <meta name="description" content="一安装 pip install Django&#x3D;&#x3D;版本号">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python数据库操作">
-<meta property="og:url" content="http://yoursite.com/2020/04/21/python%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:title" content="Django学习之路一">
+<meta property="og:url" content="http://yoursite.com/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/index.html">
 <meta property="og:site_name" content="wxnsznbd">
-<meta property="og:description" content="python链接数据库">
+<meta property="og:description" content="一安装 pip install Django&#x3D;&#x3D;版本号">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://q8918bki0.bkt.clouddn.com/20200421195648.png">
-<meta property="og:image" content="http://q8918bki0.bkt.clouddn.com/20200421200531.png">
-<meta property="article:published_time" content="2020-04-21T11:36:18.000Z">
-<meta property="article:modified_time" content="2020-04-21T12:05:37.819Z">
+<meta property="article:published_time" content="2020-07-12T05:10:47.000Z">
+<meta property="article:modified_time" content="2020-07-12T05:11:40.836Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q8918bki0.bkt.clouddn.com/20200421195648.png">
   
     <link rel="alternative" href="/atom.xml" title="wxnsznbd" type="application/atom+xml">
   
@@ -147,84 +144,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python链接数据库" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Django学习之路一" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      python数据库操作
+      Django学习之路一
     </h1>
   
 
         
-        <a href="/2020/04/21/python%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-04-21T11:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+        <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" class="archive-article-date">
+  	<time datetime="2020-07-12T05:10:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="python链接数据库"><a href="#python链接数据库" class="headerlink" title="python链接数据库"></a>python链接数据库</h2><a id="more"></a>
-
-<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><ul>
-<li>链接数据库<ul>
-<li>import pymysql</li>
-<li>conn = pymysql.connect<br>(host=’localhost’,<br>user=’root’,<br>password=’root’,<br>database = ‘pymysql_demo’,<br>port=3306)</li>
+        <ul>
+<li>一安装<ul>
+<li>pip install Django==版本号</li>
 </ul>
 </li>
-<li>游标对象<ul>
-<li>cursor = conn.cursor()</li>
+<li></li>
 </ul>
-</li>
-<li>插入删除更新都需要执行conn.commit()操作  </li>
-<li>结束关闭链接与游标<ul>
-<li>cursor.close() conn.close()</li>
-</ul>
-</li>
-<li>定义sql语句<ul>
-<li>sql = “””update user set username=’王麻子’ where id=2”””</li>
-</ul>
-</li>
-<li>执行<ul>
-<li>cursor.execute(sql)</li>
-</ul>
-</li>
-<li>查询 <ul>
-<li>fetchone()：这个方法每次之获取一条数据。result = cursor.fetchone() </li>
-<li>fetchall()：这个方法接收全部的返回结果。results = cursor.fetchall()</li>
-<li>fetchmany(size)：可以获取指定条数的数据。results = cursor.fetchmany(2)</li>
-</ul>
-</li>
-<li>删除<ul>
-<li>sql = “””update user set username=’王麻子’ where id=2”””</li>
-</ul>
-</li>
-<li>插入<ul>
-<li><img src="http://q8918bki0.bkt.clouddn.com/20200421195648.png" alt=""></li>
-</ul>
-</li>
-</ul>
-<h3 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h3><ol>
-<li>链接数据库<ul>
-<li>client = pymongo.MongoClient(“127.0.0.1”,port=27017)</li>
-</ul>
-</li>
-<li>获取数据库(如果没有这个数据库也没关系)<ul>
-<li>db = client.数据库名</li>
-</ul>
-</li>
-<li>获取数据库中的集合(如果没有这个集合也没关系)<ul>
-<li>collention = db.集合名</li>
-</ul>
-</li>
-<li>操作<ul>
-<li><img src="http://q8918bki0.bkt.clouddn.com/20200421200531.png" alt=""></li>
-</ul>
-</li>
-</ol>
 
       
 
@@ -283,7 +229,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/21/python%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +243,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/12/Django%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Django学习之路一
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/06/pip-conda-scrapy-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">常用命令</div>
+    <a href="/2020/04/21/python%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python数据库操作</div>
       <i class="icon-circle-right"></i>
     </a>
   
