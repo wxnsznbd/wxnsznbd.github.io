@@ -16,7 +16,7 @@
 <meta property="og:description" content="使用mysql数据库">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-12T13:34:07.000Z">
-<meta property="article:modified_time" content="2020-07-13T10:18:36.727Z">
+<meta property="article:modified_time" content="2020-07-15T08:05:50.999Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
   
@@ -180,7 +180,7 @@
 }</code></pre><p>3.使用pymysql替换mysqldb 习惯写入到与项目同名的文件夹下的<strong>init</strong>.py中</p>
 <pre><code>import pymysql
 pymysql.install_as_MySQLdb()</code></pre><p>4.报这个错 ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3</p>
-<pre><code>解决方法 : 找到Python环境下 django包，并进入到backends下的mysql文件夹
+<pre><code>解决方法 : 找到Python环境下 \Lib\site-packages\django\db\backends\mysql并进入到backends下的mysql文件夹
 # 找到base.py文件，注释掉 base.py 中如下部分（35/36行）
 if version &lt; (1, 3, 3):
     raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__)</code></pre><p>5.之后报AttributeError: ‘str’ object has no attribute ‘decode’这个错</p>
